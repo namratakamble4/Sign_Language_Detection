@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Language Detection</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+   
+</head>
+<body>
+     <!-- Header Section -->
+     <header>
+        <h1 style="font-size: xx-larger;">Sign Language Detection</h1>
+    </header>
+
+    <!-- Navbar Section -->
+    <nav>
+        <ul class="nav-links">
+            <li><a href="#detection">Start Detection</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- Slideshow Section -->
+    <section id="slideshow" class="slideshow-container">
+        <h2>Sign Language Slideshow</h2> <!-- Optional Title -->
+    
+        <div class="slides fade">
+            <img src="/static/images/slide1.jpg" alt="Sign 1">
+        </div>
+        <div class="slides fade">
+            <img src="/static/images/slide2.png" alt="Sign 2">
+        </div>
+        <div class="slides fade">
+            <img src="/static/images/slide3.png" alt="Sign 3">
+        </div>
+    
+        <!-- Navigation Arrows -->
+        <a class="prev" id="prev-btn">&#10094;</a>
+        <a class="next" id="next-btn">&#10095;</a>
+    </section>
+    <br>
+
+
+
+    <section id="about" class="info-section">
+        <div class="info-section">
+            <div class="info-box">
+                <h2 style="color: rgb(255, 255, 255);">About Sign Language</h2><br>
+                <p style="color: rgb(255, 255, 255);">Sign language is a visual language that uses hand gestures, body language, and facial expressions to communicate. </p><br>
+                <p style="color: rgb(255, 255, 255);">It is the primary language used by individuals who are deaf or hard of hearing, and it varies across the world, including languages like American Sign Language (ASL), British Sign Language (BSL), and others.</p>
+            </div>
+        
+            <div class="info-box">
+                <h2 style="color: rgb(255, 255, 255);">About Our App</h2><br>
+                <p style="color: rgb(255, 255, 255);">Our Sign Language Detection app is designed to bridge the communication gap for those who rely on sign language. </p><br>
+                <p style="color: rgb(255, 255, 255);">Using advanced AI technology, the app translates sign language gestures into text in real time, making communication easier and more accessible for everyone.</p>
+            </div>
+        
+            <div class="info-box">
+                <h2 style="color: rgb(255, 255, 255);">Key Features</h2><br>
+                <ul>
+                    <p style="color: rgb(255, 255, 255);">1.sign language detection using your webcam.</p>
+                    <p style="color: rgb(255, 255, 255);">2.Supports multiple sign languages, including ASL and BSL.</p>
+                    <p style="color: rgb(255, 255, 255);">3.User-friendly interface with easy-to-navigate features.</p>
+                    <p style="color: rgb(255, 255, 255);">4.Instant text translation of detected signs.</p>
+                </ul>
+            </div>
+        
+            <div class="info-box">
+                <h2 style="color: rgb(255, 255, 255);">Our Services</h2><br>
+                <ul>
+                    <p style="color: rgb(255, 255, 255);">1.Sign language detection for personal use.</p>
+                    <lp style="color: rgb(255, 255, 255);"i>2.Business integration to enhance accessibility for customers who use sign language.</p>
+                    <p style="color: rgb(255, 255, 255);">3.Learning tools for beginners and advanced signers.</p>
+                    <p style="color: rgb(255, 255, 255);">4.Custom solutions for organizations and institutions that work with the deaf community.</p>
+                </ul>
+            </div>
+        </div>
+        
+    </section>
+        <!-- Start Detection Section -->
+        <section id="detection" class="detection-container">
+            <h2>Start Detection</h2>
+            <p>Click the button below to start detecting sign language using your webcam.</p>
+            <div class="detection-area">
+                <div class="container" id="detection-container" style="display: none;">
+                    <div class="sheader">
+                      
+                        <p class="subtitle">Detect and translate sign language gestures in real-time</p>
+                    </div>
+                    
+                    <div class="video-container">
+                        <video id="video" autoplay></video>
+                        <div id="detected-sign" class="detected-sign">Detected Sign: Waiting...</div>
+                    </div>
+                    
+                    <div class="controls">
+                        <button id="play-audio-btn" class="btn secondary-btn">Play Audio</button>
+                        <button id="clear-btn" class="btn secondary-btn">Clear</button>
+                        <button id="delete-btn" class="btn secondary-btn">Delete</button>
+                        <button id="space-btn" class="btn secondary-btn">Space</button>
+                    </div>
+            
+
+                    <!-- This element should exist in your HTML -->
+
+                    <div class="output">
+                        <p id="detected-string"><strong>Detected String:</strong> <span class="output-text">Waiting for input...</span></p>
+                    </div>
+                </div>
+                <button id="detection-btn" onclick="toggleDetection()">Start Detection</button>
+            </div>
+        </section>
+        <br>
+    <section id="gallery" class="gallery-section">
+        <div class="gallery-header">
+            <h2>Sign Language Gallery</h2>
+            <input type="text" id="search-bar" placeholder="Search for signs...">
+        </div>
+        
+        <div id="sign-gallery" class="sign-info">
+            <!-- Cards will be dynamically loaded here -->
+        </div>
+    </section>
+
+     <footer id="contact">
+        <p>&copy; 2024 Sign Language Detection | Designed with ❤️ by Your Name</p>
+        <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </footer>
+  
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>

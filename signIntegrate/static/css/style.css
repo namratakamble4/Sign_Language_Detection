@@ -1,0 +1,475 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('../../static/images/background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    scroll-behavior: smooth; /* Enables smooth scrolling */
+    color: rgb(255, 255, 255);
+}
+
+container {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    min-height: 50vh;
+    padding: 20px;
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.5); 
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+
+nav .nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav .nav-links li {
+    margin: 0 20px;
+}
+
+nav .nav-links li a {
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+}
+
+nav .nav-links li a:hover {
+    background-color: #4CAF50;
+    border-radius: 3px;
+}
+
+/* Slideshow Section */
+.slideshow-container {
+    position: relative;
+    margin: 20px auto;
+    max-width: 1000px;
+    height: 80vh; /* Maintain height of the slideshow */
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5); 
+    border-radius: 10px;
+    overflow: hidden; /* Prevent overflow of images */
+}
+
+.slideshow-container h2 {
+    margin-bottom: 20px;
+    font-size: 32px;
+    color: white; /* Title color */
+}
+
+.slides {
+    display: none; /* Hide all slides initially */
+    height: 100%;
+    width: 100%;
+    position: absolute; 
+    top: 0;
+    left: 0;
+    opacity: 0; /* Ensure slides are invisible by default */
+    transition: opacity 0.5s ease-in-out; /* Smooth transition for fade effect */
+}
+
+.active-slide {
+    display: block; /* Show active slide */
+    opacity: 1; /* Fade-in effect for active slide */
+}
+
+.slides img {
+    width: 100%; /* Ensure images fill the container */
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio */
+    border-radius: 10px; /* Rounded corners for images */
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px; /* Center vertically */
+    padding: 16px;
+    color: white; /* Arrow color */
+    font-weight: bold;
+    font-size: 18px;
+    transition: background-color 0.6s ease; /* Smooth background transition */
+    border-radius: 0 3px 3px 0; /* Rounded corners */
+    user-select: none; /* Prevent text selection */
+    background-color: rgba(0, 0, 0, 0.5); /* Background for arrows */
+}
+
+.prev {
+    left: 0; /* Position left arrow */
+    border-radius: 3px 0 0 3px; /* Rounded corners for left arrow */
+}
+
+.next {
+    right: 0; /* Position right arrow */
+    border-radius: 0 3px 3px 0; /* Rounded corners for right arrow */
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Darker background on hover */
+}
+
+@media (max-width: 768px) {
+    .slideshow-container {
+        height: 60vh; /* Adjust height for smaller screens */
+    }
+
+    .prev, .next {
+        font-size: 14px; /* Smaller font size for arrows */
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+}
+
+
+/* Start Detection Section */
+detection{
+    max-height: 100vh;
+}
+.detection-container {
+    padding: 50px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+
+.detection-container h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.detection-container p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.detection-area button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.detection-area button:hover {
+    background-color: #45a049;
+}
+
+
+
+
+
+
+
+
+
+
+
+.sheader {
+    
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.title {
+    font-size: 36px;
+    color: #2c3e50;
+}
+
+.subtitle {
+    font-size: 18px;
+    color: #7f8c8d;
+}
+
+.video-container {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+video {
+    width: 100%;
+    max-width: 640px;
+    height: auto;
+    border: 2px solid #333;
+    border-radius: 10px;
+}
+
+.detected-sign {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    color: #ff5733;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.btn {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.secondary-btn {
+    background-color: #008CBA; /* Blue */
+}
+
+.secondary-btn:hover {
+    background-color: #005f73; /* Darker Blue */
+}
+
+.detected-sign {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.output {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.output-text {
+    font-weight: bold;
+}
+
+
+
+.info-section {
+    display: flex;  /* Use Flexbox for layout */
+    justify-content: space-between; /* Evenly space cards */
+    padding: 20px; /* Padding around the section */
+}
+
+.info-box {
+    background-color: rgba(0, 0, 0, 0.5); 
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Space inside the card */
+    width: 22%; /* Set width to allow four cards in a row with some space */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    transition: transform 0.3s ease; /* Add transition for hover effect */
+    text-align: left; /* Align text to the left */
+    margin-right: 20px; /* Space between cards */
+}
+
+.info-box:last-child {
+    margin-right: 0; /* Remove margin for the last card */
+}
+
+.info-box:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.info-box h2 {
+    font-size: 20px; /* Title font size */
+    margin-bottom: 10px; /* Space below title */
+    color: #333; /* Change color to improve contrast */
+}
+
+.info-box p, .info-box ul {
+    font-size: 14px; /* Adjust text size */
+    color: #333; /* Text color */
+    margin: 0; /* Remove default margins */
+}
+
+/* Adjust the list inside boxes */
+.info-box ul {
+    padding: 0; /* Remove padding */
+    list-style-type: none; /* Remove default list styles */
+}
+
+
+/* Gallery Section */
+.gallery-section {
+    padding: 50px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5); 
+    position: relative;
+    /* width: 100%; */
+}
+
+.gallery-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.gallery-header h2 {
+    color: white;
+}
+
+#search-bar {
+    padding: 10px;
+    width: 200px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Gallery Section */
+.sign-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Make smaller cards */
+    gap: 10px; /* Add some space between cards */
+    justify-items: center;
+    padding: 20px;
+    overflow-y: auto;
+    max-height: 500px; /* Limit the gallery height for scrolling */
+}
+
+.sign-item {
+    background-color: rgba(255, 255, 255, 0.8); /* Make the card stand out */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a soft shadow */
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.sign-item:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.sign-item img {
+    width: 80px;  /* Smaller image size */
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.sign-item p {
+    margin-top: 8px;
+    font-size: 14px; /* Adjust text size */
+    color: #333;
+}
+
+
+/* Infinite scrolling container */
+#sign-gallery {
+    max-height: 500px;
+    overflow-y: scroll;
+}
+
+/* Adjust search bar and other styling for smaller screens */
+@media (max-width: 768px) {
+    .gallery-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #search-bar {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .sign-info {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .sign-info {
+        grid-template-columns: repeat(1, 1fr); /* 1 column for mobile screens */
+    }
+}
+
+
+
+
+@media (max-width: 768px) {
+    .video-container, .controls {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
+
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .info-box {
+        width: 48%; /* Two cards in one row on smaller screens */
+        margin-right: 10px; /* Space between cards */
+    }
+}
+
+@media (max-width: 480px) {
+    .info-box {
+        width: 100%; /* Full width on very small screens */
+        margin-right: 0; /* Remove margin */
+    }
+}
+
+/* Footer Section */
+footer {
+    background-color: rgba(0, 0, 0, 0.5); 
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer .footer-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+footer .footer-links li {
+    margin: 0 15px;
+}
+
+footer .footer-links li a {
+    color: white;
+    text-decoration: none;
+}
+
+footer .footer-links li a:hover {
+    color: #4CAF50;
+}
